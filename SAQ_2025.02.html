@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Assessment Quiz</title>
+    <style>
+        /* Set the background color for the entire page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light grey background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the content box with white background */
+        .content-box {
+            background-color: white; /* White background for content */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Styling for text inside the white box */
+        .question {
+            margin-bottom: 20px;
+        }
+        
+        .question input {
+            display: inline-block; /* Ensures checkbox or radio button sits next to its label */
+            margin-right: 10px; /* Adds space between the checkbox/radio and the label text */
+        }
+        
+        .question label {
+            display: block; /* Ensures each label is on a new line */
+            margin-bottom: 5px; /* Adds space below the label */
+        }
+
+        /* Footer styling */
+        #footer {
+            display: none; /* Initially hide the footer */
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; padding-top: 20px;">RELEASE Australia’s antidepressant withdrawal symptoms Self-Assessment Quiz</h1>
+    
+    <!-- Eligibility Question Section -->
+    <div id="eligibilityQuestion" class="content-box">
+        <form id="assessmentForm">
+            <p>You may have been wondering is this me, is this relapse of my underlying anxiety or depressive disorder, or is what I am experiencing antidepressant withdrawal symptoms?</p>
+            <p>Use our free self-assessment quiz to check if what you are experiencing could be antidepressant withdrawal symptoms.</p>
+            <p>It takes only two minutes to learn if you are at risk and what to do next. Take the quiz.</p>
+            <p>If you’ve been asking yourself this question, you’ve probably felt for a while that something isn’t right. You might be feeling anxious and irritable, feeling dizzy or headachey, or finding it hard to focus.</p>
+            <p>Unrecognised and mismanaged antidepressant withdrawal symptoms can not only affect your quality of life but can lead to antidepressants being reinstated, increased or switched and then continued long term, sometimes for years.</p>
+            <p>Long-term use of antidepressants is associated with adverse effects and risks. Therefore, if you do not need these medications long-term and can live without them, then it is better not to continue to take them.</p>
+            <p>You have made an important first step by wanting to know more. This quiz takes around two minutes to complete. The quiz covers antidepressant withdrawal symptoms and risk factors. Your results can be emailed to you, along with a letter that you can take to discuss with your doctor. There are also links to relevant resources to support you on your journey.</p>
+            
+            <div class="question">
+                <label for="q0">Have you recently decreased your antidepressant dose or stopped antidepressants? </label><br>
+                <input type="radio" name="q0" value="yes" id="yes"> Yes
+                <input type="radio" name="q0" value="no" id="no"> No
+            </div>
+        </form>
+    </div>
+
+    <!-- Message for non-eligible users -->
+    <div id="notEligibleMessage" class="content-box" style="display: none;">
+        <p>You are not eligible to continue with the assessment.</p>
+    </div>
+
+    <!-- Form for the rest of the questions (initially hidden) -->
+    <form id="assessmentQuestions" class="content-box" style="display: none;">
+         <!-- First Question -->
+        <div class="question">
+            <label for="q1">Are you experiencing any of these (common) symptoms? Select all that apply.</label><br>
+            <input type="checkbox" name="q1" value="1"> Nervousness or anxiety<br>
+            <input type="checkbox" name="q1" value="1"> Fatigue / tiredness<br>
+            <input type="checkbox" name="q1" value="1"> Worsened mood<br>
+            <input type="checkbox" name="q1" value="1"> Trouble sleeping / insomnia<br>
+            <input type="checkbox" name="q1" value="1"> Irritability<br>
+            <input type="checkbox" name="q1" value="1"> Bouts of crying or tearfulness<br>
+            <input type="checkbox" name="q1" value="1"> Mood swings<br>
+            <input type="checkbox" name="q1" value="1"> Anger
+        </div>
+
+        <!-- Second Question -->
+        <div class="question">
+            <label for="q2">Are you experiencing any of these (distinguishing) symptoms? Select all that apply.</label><br>
+            <input type="checkbox" name="q2" value="0"> Dizziness / light-headedness<br>
+            <input type="checkbox" name="q2" value="0"> Sensation of spinning / Vertigo<br>
+            <input type="checkbox" name="q2" value="0"> Increased sensitivity to light or noise<br>
+            <input type="checkbox" name="q2" value="0"> Memory problems, forgetfulness, impaired concentration / brain fog<br>
+            <input type="checkbox" name="q2" value="0"> 'Brain zaps' or electric shock sensations<br>
+            <input type="checkbox" name="q2" value="0"> Agitation or internal sensation of buzzing or tension causing need to move<br>
+            <input type="checkbox" name="q2" value="0"> Nausea or vomiting<br>
+            <input type="checkbox" name="q2" value="0"> Unsteady gait / coordination problems<br>
+            <input type="checkbox" name="q2" value="0"> Tinnitus<br>
+            <input type="checkbox" name="q2" value="0"> Feeling unreal or cut off from the world / Depersonalisation / derealisation<br>
+            <input type="checkbox" name="q2" value="0"> Diarrhoea / upset stomach<br>
+            <input type="checkbox" name="q2" value="0"> Muscle cramps, twitches or aches<br>
+            <input type="checkbox" name="q2" value="0"> Palpitations<br>
+            <input type="checkbox" name="q2" value="0"> Vivid dreams<br>
+        </div>
+
+           
+        <!-- Third Question: Text Input -->
+        <div class="question">
+            <label for="q3"> Did your symptoms start within a day or two of stopping antidepressants?</label><br>
+            <textarea name="q5" rows="4" cols="50" placeholder="Enter your answer here..."></textarea>
+        </div>
+        <!-- Fourth Question: Text Input -->
+        <div class="question">
+            <label for="q4"> Have you experienced these symptoms on previous attempts to stop antidepressants?</label><br>
+            <textarea name="q5" rows="4" cols="50" placeholder="Enter your answer here..."></textarea>
+        </div>
+        
+        <!-- Fifth Question -->
+        <div class="question">
+            <label for="q5">Have you been taking any of the following antidepressants? Select all that apply</label><br>
+            <input type="checkbox" name="q3" value="4"> Desbenlafaxine<br>
+            <input type="checkbox" name="q3" value="4"> Venlafaxine<br>
+            <input type="checkbox" name="q3" value="4"> Duloxetine<br>
+            <input type="checkbox" name="q3" value="4"> Paroxetine<br>
+            <input type="checkbox" name="q3" value="4"> Mirtazapine<br>
+            <input type="checkbox" name="q3" value="4"> Moclobemide<br>
+         </div>
+         
+        <!-- Sixth Question -->
+        <div class="question">
+            <label for="q6">Have you been taking any of the following antidepressants? Select all that apply. </label><br>
+            <input type="checkbox" name="q3" value="2"> Sertraline<br>
+            <input type="checkbox" name="q3" value="2"> Escitalopram<br>
+            <input type="checkbox" name="q3" value="2"> Fluoxetine<br>
+            <input type="checkbox" name="q3" value="2"> Citalopram<br>
+            <input type="checkbox" name="q3" value="2"> Fluvoxamine<br>
+            <input type="checkbox" name="q3" value="2"> Amitriptyline<br>
+            <input type="checkbox" name="q3" value="2"> Nortriptyline<br>
+            <input type="checkbox" name="q3" value="2"> Clomipramine<br>
+            <input type="checkbox" name="q3" value="2"> Imipramine<br>
+         </div>
+         
+        <!-- Seventh ixth Question -->
+        <div class="question">
+            <label for="q7">Have you been taking any of the following antidepressants? Select all that apply. </label><br>
+            <input type="checkbox" name="q3" value="1"> Vortioxetine<br>
+            <input type="checkbox" name="q3" value="1"> Trimipramine<br>
+            <input type="checkbox" name="q3" value="1"> Dosulepin<br>
+            <input type="checkbox" name="q3" value="1"> Argoleatine<br>
+        </div> 
+        
+        <!-- Eighth Question: Radio Buttons -->
+        <div class="question">
+            <label for="q8">How long have you been taking antidepressants?</label><br>
+            <input type="radio" name="q4" value="3"> Longer than 3 years<br>
+            <input type="radio" name="q4" value="2"> 1-3 years<br>
+            <input type="radio" name="q4" value="1"> 6-12 months<br>
+            <input type="radio" name="q4" value="0"> 1-6 months<br>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <!-- Result Message -->
+    <p id="result" class="content-box"></p>
+
+    <!-- Footer (initially hidden) -->
+    <div id="footer">
+        <p>Thank you. You have completed the quiz!</p>
+        <p>If your results indicate that you have one or more symptoms or risk factors for antidepressant withdrawal symptoms. We recommend that you make an appointment with your doctor to discuss your symptoms. Please take the attached letter with you to your appointment. </p>
+		<p>If you plan to decrease or stop antidepressants, it is important that you do so very slowly. </p>
+		<p><strong>What’s next?</strong></p>
+		<p>Your results will be emailed to you, along with a referral letter to take with you to your doctor. In the meantime, we’re here to help – if you would like to talk to someone about your concerns, the process for safely stopping antidepressants or about joining RELEASE Australia, please phone 1300 … or email info@ … </p>
+		<p>Email – download your referral letter here. </p>
+		<p>Thank you for completing RELEASE Australia’s antidepressant withdrawal symptoms Self-Assessment Quiz. </p>
+		<p>The selected responses indicate an increased risk of antidepressant withdrawal symptoms, so we recommend talking to your doctor. </p>
+		<p>We have created a referral letter for you to take to your Doctor. Please download your referral letter here  </p>
+		 <!-- Add your link to another page here -->
+   		 <p>For more information, visit our <a href="https://www.example.com" target="_blank">help page</a>.</p>
+    </div>
+
+    <script>
+        // Function to handle Yes/No answer and display the correct content
+        document.getElementById('yes').onclick = function() {
+            // Hide eligibility question and show assessment form
+            document.getElementById('eligibilityQuestion').style.display = 'none';
+            document.getElementById('assessmentQuestions').style.display = 'block';
+            document.getElementById('notEligibleMessage').style.display = 'none'; // Hide eligibility message
+        };
+
+        document.getElementById('no').onclick = function() {
+            // Hide eligibility question and show not eligible message
+            document.getElementById('eligibilityQuestion').style.display = 'none';
+            document.getElementById('assessmentQuestions').style.display = 'none';
+            document.getElementById('notEligibleMessage').style.display = 'block'; // Show eligibility message
+        };
+
+			function calculateScore() {
+				const form = document.getElementById('assessmentQuestions');
+				const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked'); // Get all checked checkboxes
+				const radios = form.querySelectorAll('input[type="radio"]:checked'); // Get all checked radio buttons
+				let score = 0;
+
+				// Check if any checkbox is selected in the first question (q1)
+				const q1Checkboxes = form.querySelectorAll('input[name="q1"]:checked');
+				if (q1Checkboxes.length > 0) {
+					score += 1;  // Add 1 if any checkbox is selected in question 1
+				}
+
+				// Check if any checkbox is selected in the second question (q2)
+				const q2Checkboxes = form.querySelectorAll('input[name="q2"]:checked');
+				if (q2Checkboxes.length > 0) {
+					score += 4;  // Add 1 if any checkbox is selected in question 2
+				}
+
+				// Calculate score from other checkboxes (not for question 1 and 2)
+				checkboxes.forEach(checkbox => {
+					if (checkbox.name !== "q1" && checkbox.name !== "q2") {
+						score += parseInt(checkbox.value);  // Add the value of the checked box to the score
+					}
+				});
+
+				// Calculate score from radio buttons
+				radios.forEach(radio => {
+					score += parseInt(radio.value);  // Add the value of the checked radio button to the score
+				});
+
+				let resultMessage = '';
+
+				// Determine the result based on the score
+				if (score >= 9) {
+					resultMessage = ' Your results indicate that it is Very Highly Likely that you have symptoms or risk factors for antidepressant withdrawal symptoms';
+				} else if (score >= 5 && score <= 8) {
+					resultMessage = 'Your results indicate that it is  Highly Likely that you have symptoms or risk factors for antidepressant withdrawal symptoms';
+				} else if (score >= 1 && score <= 4) {
+					resultMessage = 'Your results indicate that it is Moderately Likely that you have symptoms or risk factors for antidepressant withdrawal symptoms';
+				} else if (score === 0) {
+					resultMessage = 'Your results indicate that it is Unlikely that you have symptoms or risk factors for antidepressant withdrawal symptoms';
+				} else {
+					resultMessage = 'Please select at least one option.';
+				}
+
+				document.getElementById('result').innerText = 'Your score is: ' + score + '\n' + resultMessage;
+
+				// Show the footer after the result is displayed
+				document.getElementById('footer').style.display = 'block';
+			}
+    </script>
+</body>
+</html>
